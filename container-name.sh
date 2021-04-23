@@ -22,7 +22,7 @@ echo "In order to save your changes, you will have to restart your container."
 read -r -p "Would you like to proceed? [Y/n] " response
 case "$response" in
     [yY][eE][sS]|[yY]) 
-        echo "Mock reboot comfirmed."
+        reboot
         ;;
     *)
         sed -i "s/$name$/$old/g" /etc/hostname
