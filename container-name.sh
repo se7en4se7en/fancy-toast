@@ -1,6 +1,6 @@
 #!/bin/bash
 
-old=`cat "/home/ryan/projects/fancy-toast/hostname.txt"`
+old=`cat "/etc/hostname"`
 # saves current container name as a variable
 
 echo "Your current container name is $old."
@@ -10,14 +10,14 @@ echo "What would you like to change the container name to?"
 read name 
 # gets user input for new container name
  
-sed -i "s/$old$/$name/g" /home/ryan/projects/fancy-toast/hostname.txt
-sed -i "s/$old$/$name/g" /home/ryan/projects/fancy-toast/hosts.txt
+sed -i "s/$old$/$name/g" /etc/hostname
+sed -i "s/$old$/$name/g" /etc/hosts
 # changes the container name by editing the files in /etc/hostname and /etc/hosts
 
 echo "Okay, your container is now called $name"
 # confirms name change
 echo " "
-echo "In order to save your changes, you will have to restart your device."
+echo "In order to save your changes, you will have to restart your container."
 
 read -r -p "Would you like to proceed? [Y/n] " response
 case "$response" in
